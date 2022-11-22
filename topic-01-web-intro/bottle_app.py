@@ -1,4 +1,4 @@
-from bottle import default_app, route, get, post, template, request, redirect
+from bottle import default_app, route, get, post, template, request, redirect, run
 import sqlite3
 
 connection = sqlite3.connect("shopping_list.db")
@@ -61,5 +61,7 @@ def post_edit(id):
     redirect('/list')
 
 
-application = default_app()
+#application = default_app()
+run(host='localhost', port=8080)
+
 
